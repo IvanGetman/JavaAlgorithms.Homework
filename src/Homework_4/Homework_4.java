@@ -1,5 +1,7 @@
 package Homework_4;
 
+import java.util.PriorityQueue;
+
 public class Homework_4 {
     public static void main(String[] args) {
         long startTime;
@@ -78,6 +80,59 @@ public class Homework_4 {
         System.out.println(myQueue.isEmpty()); //true
 
         //Задание 4.3
+        MyDeque myDeque = new MyDeque(5);
+        myDeque.addFirst(new Person("Иван", "Иванов"));
+        myDeque.addFirst(new Person("Сергей", "Иванов"));
+        myDeque.addFirst(new Person("Р2Д2", "Иванов"));
+        startTime = System.nanoTime();
+        myDeque.addLast(new Person("Иван", "Сергеев"));
+        finishTime = System.nanoTime();
+        System.out.println("Время метода .addLast = " + (finishTime - startTime));
+        startTime = System.nanoTime();
+        myDeque.addFirst(new Person("Сергей", "Сергеев"));
+        finishTime = System.nanoTime();
+        System.out.println("Время метода .addFirst = " + (finishTime - startTime));
+        startTime = System.nanoTime();
+        System.out.println(myDeque.size());
+        finishTime = System.nanoTime();
+        System.out.println("Время метода .size = " + (finishTime - startTime));
+        startTime = System.nanoTime();
+        System.out.println(myDeque.isFull());
+        finishTime = System.nanoTime();
+        System.out.println("Время метода .isFull = " + (finishTime - startTime));
+        startTime = System.nanoTime();
+        System.out.println(myDeque.isEmpty());
+        finishTime = System.nanoTime();
+        System.out.println("Время метода .isEmpty = " + (finishTime - startTime));
+        startTime = System.nanoTime();
+        System.out.println(myDeque.peekLast());
+        finishTime = System.nanoTime();
+        System.out.println("Время метода .peekLast = " + (finishTime - startTime));
+        startTime = System.nanoTime();
+        System.out.println(myDeque.removeFirst());
+        finishTime = System.nanoTime();
+        System.out.println("Время метода .removeFirst = " + (finishTime - startTime));
+        startTime = System.nanoTime();
+        System.out.println(myDeque.removeLast());
+        finishTime = System.nanoTime();
+        System.out.println("Время метода .removeLast = " + (finishTime - startTime));
+        System.out.println(myDeque.peekLast());
 
+        //Задание 4.4
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        startTime = System.nanoTime();
+        priorityQueue.add(9);
+        finishTime = System.nanoTime();
+        System.out.println("Время метода .add = " + (finishTime - startTime));
+        priorityQueue.add(3);
+        priorityQueue.add(7);
+        priorityQueue.add(5);
+        startTime = System.nanoTime();
+        priorityQueue.remove();
+        finishTime = System.nanoTime();
+        System.out.println("Время метода .remove = " + (finishTime - startTime));
+
+        //Задание 4.5
+        //Надеюсь очереди и стэки достали тебя также как и меня
     }
 }

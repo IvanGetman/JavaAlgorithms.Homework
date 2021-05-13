@@ -16,10 +16,10 @@ public class MyDeque {
     }
 
     public void addFirst(Person element) {
-        if (rear == maxSize - 1) {
-            rear = -1;
+        if (front == 0) {
+            front = maxSize;
         }
-        deque[++rear] = element;
+        deque[--front] = element;
         items++;
     }
 
@@ -41,9 +41,9 @@ public class MyDeque {
     }
 
     public Person removeLast() {
-        Person temp = deque[front++];
-        if (front == maxSize) {
-            front = 0;
+        Person temp = deque[rear--];
+        if (rear == -1) {
+            rear = maxSize - 1;
         }
         items--;
         return temp;
@@ -54,7 +54,7 @@ public class MyDeque {
     }
 
     public Person peekLast() {
-        return deque[front];
+        return deque[rear];
     }
 
     public boolean isEmpty() {
